@@ -369,3 +369,16 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_4] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_4, dance_4_finished, dance_4_reset),
         [DANCE_5] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_5, dance_5_finished, dance_5_reset),
 };
+
+// Custom QMK here
+const key_override_t ques_exlm = 
+    ko_make_basic(MOD_MASK_SHIFT, SE_QUES, KC_EXLM);
+
+const key_override_t apos_dquo = 
+    ko_make_basic(MOD_MASK_SHIFT, SE_APOS, SE_DQUO);
+
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&ques_exlm,
+	&apos_dquo,
+	NULL
+};
