@@ -1,11 +1,11 @@
-#define SE_APOS KC_NUHS
-#define SE_DQUO S(KC_2)
 #define SE_MINS KC_SLSH
 #define SE_AA KC_LBRC
 #define SE_OSLH KC_SCLN
 #define SE_ADIA KC_QUOT
 #define SE_QUES S(KC_MINS)
+#define SE_APOS KC_NUHS
 #define SE_ACUT KC_EQL
+#define SE_DQUO S(KC_2)
 #define SE_CIRC S(KC_RBRC)
 #define SE_GRV S(KC_EQL)
 #define SE_AT ALGR(KC_2)
