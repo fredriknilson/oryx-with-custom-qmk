@@ -31,4 +31,4 @@
 #define SE_ASTR S(KC_NUHS)
 #define SE_PLUS KC_MINS
 #define SE_EQL S(KC_0)
-#define SE_SECT KC_GRV
+#define SE_SECT_MAC ALGR(KC_6)
