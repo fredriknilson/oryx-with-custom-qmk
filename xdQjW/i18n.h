@@ -27,6 +27,7 @@
 #define SE_COLN S(KC_DOT)
 #define SE_RPRN S(KC_9)
 #define SE_RCBR_MAC S(ALGR(KC_9))
+#define SE_MU ALGR(KC_M)
 #define SE_SLSH S(KC_7)
 #define SE_ASTR S(KC_NUHS)
 #define SE_PLUS KC_MINS
