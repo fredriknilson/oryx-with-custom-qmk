@@ -44,13 +44,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_voyager(
     KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,                                          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         
     SE_ACUT,        SE_APOS,        SE_DQUO,        SE_CIRC,        SE_QUES,        SE_GRV,                                         SE_LESS_MAC,    SE_LBRC,        SE_UNDS,        SE_RBRC,        SE_GRTR_MAC,    SE_DIAE,        
-    MT(MOD_LCTL, KC_TAB),TD(DANCE_8),    TD(DANCE_9),    TD(DANCE_10),   TD(DANCE_11),   KC_PERC,                                        SE_LCBR_MAC,    TD(DANCE_12),   TD(DANCE_13),   TD(DANCE_14),   TD(DANCE_15),   LSFT(KC_NUBS),  
+    LSFT(KC_4),     TD(DANCE_8),    TD(DANCE_9),    TD(DANCE_10),   TD(DANCE_11),   KC_PERC,                                        SE_LCBR_MAC,    TD(DANCE_12),   TD(DANCE_13),   TD(DANCE_14),   TD(DANCE_15),   LSFT(KC_NUBS),  
     SE_PND,         SE_TILD,        SE_AMPR,        SE_SCLN,        SE_BSLS_MAC,    SE_PIPE_MAC,                                    SE_SLSH,        SE_ASTR,        SE_MINS,        SE_PLUS,        SE_EQL,         SE_SECT_MAC,    
                                                     KC_TRANSPARENT, QK_LLCK,                                        QK_LLCK,        KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
     RGB_TOG,        TOGGLE_LAYER_COLOR,RGB_MODE_FORWARD,RGB_SLD,        RGB_VAD,        RGB_VAI,                                        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          QK_BOOT,        
-    KC_NO,          KC_NO,          KC_NO,          HSV_0_255_255,  HSV_74_255_255, HSV_169_255_255,                                KC_PAGE_UP,     KC_LEFT,        KC_UP,          KC_END,         KC_NO,          KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          HSV_0_255_255,  HSV_74_255_255, HSV_169_255_255,                                KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_NO,          KC_NO,          
     KC_NO,          KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,                                          KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_NO,          KC_NO,          
     KC_NO,          LCTL(KC_1),     LCTL(KC_2),     LCTL(KC_3),     LCTL(KC_4),     KC_NO,                                          KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,KC_AUDIO_MUTE,  KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
                                                     QK_LLCK,        KC_TRANSPARENT,                                 KC_TRANSPARENT, QK_LLCK
