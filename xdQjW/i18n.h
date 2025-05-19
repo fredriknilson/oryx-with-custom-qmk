@@ -4,14 +4,13 @@
 #define SE_ADIA KC_QUOT
 #define SE_QUES S(KC_MINS)
 #define SE_APOS KC_NUHS
-#define SE_ACUT KC_EQL
+#define SE_TILD ALGR(KC_RBRC)
 #define SE_DQUO S(KC_2)
 #define SE_CIRC S(KC_RBRC)
+#define SE_ACUT KC_EQL
 #define SE_GRV S(KC_EQL)
 #define SE_AT ALGR(KC_2)
 #define SE_DLR_MAC S(KC_4)
-#define SE_PND ALGR(KC_3)
-#define SE_TILD ALGR(KC_RBRC)
 #define SE_AMPR S(KC_6)
 #define SE_SCLN S(KC_COMM)
 #define SE_BSLS_MAC S(ALGR(KC_7))
