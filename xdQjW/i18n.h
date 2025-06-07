@@ -1,4 +1,5 @@
 #define SE_MINS KC_SLSH
+#define SE_EQL S(KC_0)
 #define SE_AA KC_LBRC
 #define SE_OSLH KC_SCLN
 #define SE_ADIA KC_QUOT
@@ -29,5 +30,4 @@
 #define SE_SLSH S(KC_7)
 #define SE_ASTR S(KC_NUHS)
 #define SE_PLUS KC_MINS
-#define SE_EQL S(KC_0)
 #define SE_SECT_MAC ALGR(KC_6)
