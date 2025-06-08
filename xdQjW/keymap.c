@@ -20,19 +20,19 @@ enum tap_dance_codes {
   DANCE_3,
 };
 
-#define DUAL_FUNC_0 LT(2, KC_F15)
-#define DUAL_FUNC_1 LT(8, KC_F24)
-#define DUAL_FUNC_2 LT(3, KC_F8)
-#define DUAL_FUNC_3 LT(2, KC_Z)
-#define DUAL_FUNC_4 LT(11, KC_8)
-#define DUAL_FUNC_5 LT(11, KC_F15)
-#define DUAL_FUNC_6 LT(13, KC_D)
-#define DUAL_FUNC_7 LT(14, KC_F9)
-#define DUAL_FUNC_8 LT(2, KC_F22)
-#define DUAL_FUNC_9 LT(3, KC_J)
-#define DUAL_FUNC_10 LT(4, KC_F20)
-#define DUAL_FUNC_11 LT(4, KC_F11)
-#define DUAL_FUNC_12 LT(1, KC_8)
+#define DUAL_FUNC_0 LT(8, KC_F10)
+#define DUAL_FUNC_1 LT(11, KC_K)
+#define DUAL_FUNC_2 LT(12, KC_F23)
+#define DUAL_FUNC_3 LT(4, KC_T)
+#define DUAL_FUNC_4 LT(4, KC_F7)
+#define DUAL_FUNC_5 LT(2, KC_U)
+#define DUAL_FUNC_6 LT(10, KC_F17)
+#define DUAL_FUNC_7 LT(11, KC_V)
+#define DUAL_FUNC_8 LT(15, KC_Q)
+#define DUAL_FUNC_9 LT(5, KC_A)
+#define DUAL_FUNC_10 LT(9, KC_6)
+#define DUAL_FUNC_11 LT(2, KC_F8)
+#define DUAL_FUNC_12 LT(11, KC_F8)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,                                          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         
     SE_TILD,        SE_APOS,        SE_DQUO,        SE_CIRC,        SE_QUES,        SE_ACUT,                                        SE_LESS_MAC,    SE_LBRC,        SE_UNDS,        SE_RBRC,        SE_GRTR_MAC,    SE_DIAE,        
     SE_GRV,         DUAL_FUNC_5,    DUAL_FUNC_6,    DUAL_FUNC_7,    DUAL_FUNC_8,    KC_PERC,                                        SE_LCBR_MAC,    DUAL_FUNC_9,    DUAL_FUNC_10,   DUAL_FUNC_11,   DUAL_FUNC_12,   LSFT(KC_NUBS),  
-    KC_TRANSPARENT, SE_TILD,        SE_AMPR,        SE_SCLN,        SE_BSLS_MAC,    SE_PIPE_MAC,                                    SE_SLSH,        SE_ASTR,        SE_MINS,        SE_PLUS,        SE_EQL,         SE_SECT_MAC,    
+    LSFT(KC_4),     SE_TILD,        SE_AMPR,        SE_SCLN,        SE_BSLS_MAC,    SE_PIPE_MAC,                                    SE_SLSH,        SE_ASTR,        SE_MINS,        SE_PLUS,        SE_EQL,         SE_SECT_MAC,    
                                                     KC_TRANSPARENT, QK_LLCK,                                        QK_LLCK,        KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
