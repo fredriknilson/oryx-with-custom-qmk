@@ -571,58 +571,18 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_3] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_3, dance_3_finished, dance_3_reset),
 };
 
-// Custom QMK here
+// Overrides
 
-// shift + ` → ~
-const key_override_t mac_shift_grv_override = ko_make_basic(MOD_MASK_SHIFT, SE_GRV, SE_TILD);
-// option + ` → ¨
-const key_override_t mac_opt_grv_override = ko_make_basic(MOD_MASK_ALT, SE_GRV, SE_DIAE);
-
-// shift + 2 " → @
-const key_override_t mac_shift_2_override = ko_make_basic(MOD_MASK_SHIFT, KC_2, SE_AT);
-// shift + 4 € → $
-const key_override_t mac_shift_4_override = ko_make_basic(MOD_MASK_SHIFT, KC_4, SE_DLR_MAC);
-// option + 4 → €
-const key_override_t mac_opt_4_override = ko_make_basic(MOD_MASK_ALT, KC_4, S(KC_4));
-// shift + 6 & → ^
-const key_override_t mac_shift_6_override = ko_make_basic(MOD_MASK_SHIFT, KC_6, SE_CIRC);
-// shift + 7 / → &
-const key_override_t mac_shift_7_override = ko_make_basic(MOD_MASK_SHIFT, KC_7, SE_AMPR);
-// shift + 8 ( → *
-const key_override_t mac_shift_8_override = ko_make_basic(MOD_MASK_SHIFT, KC_8, SE_ASTR);
-// shift + 9 ) → (
-const key_override_t mac_shift_9_override = ko_make_basic(MOD_MASK_SHIFT, KC_9, SE_LPRN);
-// shift + 0 = → )
-const key_override_t mac_shift_0_override = ko_make_basic(MOD_MASK_SHIFT, KC_0, SE_RPRN);
-
-// shift + = → +
-const key_override_t mac_shift_equal_override = ko_make_basic(MOD_MASK_SHIFT, SE_EQL, SE_PLUS);
-
+// Shift + , → ;
+const key_override_t shift_comm_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);
+// Shift + . → :
+const key_override_t shift_dot_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);
 // shift + ? → !
-const key_override_t mac_shift_ques_override = ko_make_basic(MOD_MASK_SHIFT, KC_EXLM, SE_QUES);
-// shift + ' → "
-const key_override_t mac_shift_quot_override = ko_make_basic(MOD_MASK_SHIFT, SE_APOS, SE_DQUO);
-// option + ' → ´
-const key_override_t mac_opt_quot_override = ko_make_basic(MOD_MASK_ALT, SE_APOS, SE_ACUT);
-
+const key_override_t shift_ques_override = ko_make_basic(MOD_MASK_SHIFT, KC_EXLM, KC_QUES);
 
 const key_override_t **key_overrides = (const key_override_t *[]) {
-  &mac_shift_grv_override,
-  &mac_opt_grv_override,
-
-  &mac_shift_2_override,
-  &mac_shift_4_override,
-  &mac_opt_4_override,
-  &mac_shift_6_override,
-  &mac_shift_7_override,
-  &mac_shift_8_override,
-  &mac_shift_9_override,
-  &mac_shift_0_override,
-
-  &mac_shift_equal_override,
-  &mac_shift_quot_override,
-
-  &mac_shift_ques_override,
-  &mac_opt_quot_override,
-	NULL
+    &shift_comm_override,
+    &shift_dot_override,
+    &shift_ques_override,
+    NULL
 };
