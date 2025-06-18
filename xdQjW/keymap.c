@@ -18,18 +18,18 @@ enum tap_dance_codes {
   DANCE_2,
 };
 
-#define DUAL_FUNC_0 LT(6, KC_G)
-#define DUAL_FUNC_1 LT(8, KC_F22)
-#define DUAL_FUNC_2 LT(13, KC_3)
-#define DUAL_FUNC_3 LT(4, KC_F)
-#define DUAL_FUNC_4 LT(13, KC_A)
-#define DUAL_FUNC_5 LT(3, KC_M)
-#define DUAL_FUNC_6 LT(15, KC_F19)
-#define DUAL_FUNC_7 LT(8, KC_A)
-#define DUAL_FUNC_8 LT(10, KC_4)
-#define DUAL_FUNC_9 LT(14, KC_7)
-#define DUAL_FUNC_10 LT(11, KC_D)
-#define DUAL_FUNC_11 LT(5, KC_F5)
+#define DUAL_FUNC_0 LT(11, KC_F14)
+#define DUAL_FUNC_1 LT(2, KC_D)
+#define DUAL_FUNC_2 LT(7, KC_K)
+#define DUAL_FUNC_3 LT(14, KC_0)
+#define DUAL_FUNC_4 LT(2, KC_F24)
+#define DUAL_FUNC_5 LT(8, KC_F19)
+#define DUAL_FUNC_6 LT(2, KC_F13)
+#define DUAL_FUNC_7 LT(9, KC_A)
+#define DUAL_FUNC_8 LT(7, KC_5)
+#define DUAL_FUNC_9 LT(13, KC_F2)
+#define DUAL_FUNC_10 LT(2, KC_7)
+#define DUAL_FUNC_11 LT(5, KC_F1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     KC_NO,          KC_NO,          KC_MS_ACCEL0,   KC_MS_ACCEL1,   KC_MS_ACCEL2,   KC_NO,                                          KC_MS_WH_UP,    KC_MS_WH_LEFT,  KC_MS_UP,       KC_MS_WH_RIGHT, KC_NO,          KC_NO,          
-    KC_NO,          KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,                                          KC_MS_WH_DOWN,  KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_DOWN,     KC_NO,          KC_NO,          
+    KC_NO,          KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,                                          KC_MS_WH_DOWN,  KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_NO,          KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_MS_BTN3,     KC_NO,          KC_NO,          KC_NO,          KC_NO,          
                                                     QK_LLCK,        KC_TRANSPARENT,                                 KC_MS_BTN1,     KC_MS_BTN2
   ),
