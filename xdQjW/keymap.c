@@ -512,7 +512,7 @@ const key_override_t shift_dot_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, 
 // shift + ? → !
 const key_override_t shift_ques_override = ko_make_basic(MOD_MASK_SHIFT, KC_EXLM, KC_QUES);
 
-const key_override_t **key_overrides = (const key_override_t *[]) {
+const key_override_t *const key_overrides[] = {
     &shift_comm_override,
     &shift_dot_override,
     &shift_ques_override,
