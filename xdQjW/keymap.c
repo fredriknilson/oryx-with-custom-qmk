@@ -1,10 +1,12 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 #define MOON_LED_LEVEL LED_LEVEL
-#define ML_SAFE_RANGE SAFE_RANGE
+#ifndef ZSA_SAFE_RANGE
+#define ZSA_SAFE_RANGE SAFE_RANGE
+#endif
 
 enum custom_keycodes {
-  RGB_SLD = ML_SAFE_RANGE,
+  RGB_SLD = ZSA_SAFE_RANGE,
   HSV_0_255_255,
   HSV_74_255_255,
   HSV_169_255_255,
@@ -18,18 +20,18 @@ enum tap_dance_codes {
   DANCE_2,
 };
 
-#define DUAL_FUNC_0 LT(11, KC_F14)
-#define DUAL_FUNC_1 LT(2, KC_D)
-#define DUAL_FUNC_2 LT(7, KC_K)
-#define DUAL_FUNC_3 LT(14, KC_0)
-#define DUAL_FUNC_4 LT(2, KC_F24)
-#define DUAL_FUNC_5 LT(8, KC_F19)
-#define DUAL_FUNC_6 LT(2, KC_F13)
-#define DUAL_FUNC_7 LT(9, KC_A)
-#define DUAL_FUNC_8 LT(7, KC_5)
-#define DUAL_FUNC_9 LT(13, KC_F2)
-#define DUAL_FUNC_10 LT(2, KC_7)
-#define DUAL_FUNC_11 LT(5, KC_F1)
+#define DUAL_FUNC_0 LT(7, KC_K)
+#define DUAL_FUNC_1 LT(7, KC_F12)
+#define DUAL_FUNC_2 LT(3, KC_F17)
+#define DUAL_FUNC_3 LT(3, KC_F12)
+#define DUAL_FUNC_4 LT(13, KC_1)
+#define DUAL_FUNC_5 LT(12, KC_6)
+#define DUAL_FUNC_6 LT(8, KC_G)
+#define DUAL_FUNC_7 LT(4, KC_F)
+#define DUAL_FUNC_8 LT(7, KC_R)
+#define DUAL_FUNC_9 LT(6, KC_F13)
+#define DUAL_FUNC_10 LT(5, KC_F18)
+#define DUAL_FUNC_11 LT(4, KC_L)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -49,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     RGB_TOG,        TOGGLE_LAYER_COLOR,RGB_MODE_FORWARD,RGB_SLD,        RGB_VAD,        RGB_VAI,                                        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          HSV_0_255_255,  HSV_74_255_255, HSV_169_255_255,                                KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_NO,          KC_NO,          
-    KC_NO,          KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,                                          KC_PGDN,        KC_LEFT,        KC_UP,          KC_RIGHT,       KC_NO,          KC_NO,          
+    KC_NO,          KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,                                          KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_NO,          KC_NO,          
     KC_NO,          LCTL(KC_1),     LCTL(KC_2),     LCTL(KC_3),     LCTL(KC_4),     KC_NO,                                          KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,KC_AUDIO_MUTE,  KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
                                                     QK_LLCK,        KC_TRANSPARENT,                                 KC_TRANSPARENT, QK_LLCK
   ),
@@ -79,7 +81,14 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 
 
 
+
 extern rgb_config_t rgb_matrix_config;
+
+RGB hsv_to_rgb_with_value(HSV hsv) {
+  RGB rgb = hsv_to_rgb( hsv );
+  float f = (float)rgb_matrix_config.hsv.v / UINT8_MAX;
+  return (RGB){ f * rgb.r, f * rgb.g, f * rgb.b };
+}
 
 void keyboard_post_init_user(void) {
   rgb_matrix_enable();
@@ -102,9 +111,8 @@ void set_layer_color(int layer) {
     if (!hsv.h && !hsv.s && !hsv.v) {
         rgb_matrix_set_color( i, 0, 0, 0 );
     } else {
-        RGB rgb = hsv_to_rgb( hsv );
-        float f = (float)rgb_matrix_config.hsv.v / UINT8_MAX;
-        rgb_matrix_set_color( i, f * rgb.r, f * rgb.g, f * rgb.b );
+        RGB rgb = hsv_to_rgb_with_value(hsv);
+        rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
     }
   }
 }
@@ -113,7 +121,7 @@ bool rgb_matrix_indicators_user(void) {
   if (rawhid_state.rgb_control) {
       return false;
   }
-  if (keyboard_config.disable_layer_led) { return false; }
+  if (!keyboard_config.disable_layer_led) { 
   switch (biton32(layer_state)) {
     case 2:
       set_layer_color(2);
@@ -122,10 +130,16 @@ bool rgb_matrix_indicators_user(void) {
       set_layer_color(3);
       break;
    default:
-    if (rgb_matrix_get_flags() == LED_FLAG_NONE)
+        if (rgb_matrix_get_flags() == LED_FLAG_NONE) {
       rgb_matrix_set_color_all(0, 0, 0);
-    break;
   }
+    }
+  } else {
+    if (rgb_matrix_get_flags() == LED_FLAG_NONE) {
+      rgb_matrix_set_color_all(0, 0, 0);
+    }
+  }
+
   return true;
 }
 
