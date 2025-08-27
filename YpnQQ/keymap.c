@@ -23,21 +23,21 @@ enum tap_dance_codes {
   DANCE_5,
 };
 
-#define DUAL_FUNC_0 LT(8, KC_A)
-#define DUAL_FUNC_1 LT(15, KC_F21)
-#define DUAL_FUNC_2 LT(15, KC_R)
-#define DUAL_FUNC_3 LT(15, KC_P)
-#define DUAL_FUNC_4 LT(7, KC_3)
-#define DUAL_FUNC_5 LT(2, KC_O)
-#define DUAL_FUNC_6 LT(5, KC_W)
-#define DUAL_FUNC_7 LT(12, KC_R)
-#define DUAL_FUNC_8 LT(14, KC_F24)
-#define DUAL_FUNC_9 LT(14, KC_1)
-#define DUAL_FUNC_10 LT(1, KC_9)
-#define DUAL_FUNC_11 LT(1, KC_F21)
-#define DUAL_FUNC_12 LT(11, KC_V)
-#define DUAL_FUNC_13 LT(5, KC_F12)
-#define DUAL_FUNC_14 LT(6, KC_F)
+#define DUAL_FUNC_0 LT(6, KC_M)
+#define DUAL_FUNC_1 LT(2, KC_V)
+#define DUAL_FUNC_2 LT(14, KC_C)
+#define DUAL_FUNC_3 LT(15, KC_5)
+#define DUAL_FUNC_4 LT(11, KC_F24)
+#define DUAL_FUNC_5 LT(12, KC_F11)
+#define DUAL_FUNC_6 LT(6, KC_L)
+#define DUAL_FUNC_7 LT(9, KC_F10)
+#define DUAL_FUNC_8 LT(9, KC_X)
+#define DUAL_FUNC_9 LT(13, KC_0)
+#define DUAL_FUNC_10 LT(9, KC_F1)
+#define DUAL_FUNC_11 LT(14, KC_D)
+#define DUAL_FUNC_12 LT(11, KC_6)
+#define DUAL_FUNC_13 LT(8, KC_0)
+#define DUAL_FUNC_14 LT(14, KC_2)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -431,7 +431,8 @@ void dance_5_finished(tap_dance_state_t *state, void *user_data) {
     dance_state[5].step = dance_step(state);
     switch (dance_state[5].step) {
         case SINGLE_TAP: register_code16(KC_EQUAL); break;
-        case DOUBLE_TAP: layer_move(4); break;
+        case DOUBLE_TAP: register_code16(KC_EQUAL); register_code16(KC_EQUAL); break;
+        case DOUBLE_HOLD: layer_move(4); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_EQUAL); register_code16(KC_EQUAL);
     }
 }
@@ -440,6 +441,7 @@ void dance_5_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[5].step) {
         case SINGLE_TAP: unregister_code16(KC_EQUAL); break;
+        case DOUBLE_TAP: unregister_code16(KC_EQUAL); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_EQUAL); break;
     }
     dance_state[5].step = 0;
