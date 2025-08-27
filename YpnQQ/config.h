@@ -1,6 +1,6 @@
 #define CHORDAL_HOLD
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "YpnQQ/rbl6bj"
+#define SERIAL_NUMBER "YpnQQ/Az0wDe"
 #define LAYER_STATE_16BIT
 
 #define RGB_MATRIX_STARTUP_SPD 60
