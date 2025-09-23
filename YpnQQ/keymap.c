@@ -23,25 +23,25 @@ enum tap_dance_codes {
   DANCE_5,
 };
 
-#define DUAL_FUNC_0 LT(7, KC_D)
-#define DUAL_FUNC_1 LT(6, KC_8)
-#define DUAL_FUNC_2 LT(12, KC_5)
-#define DUAL_FUNC_3 LT(6, KC_1)
-#define DUAL_FUNC_4 LT(5, KC_W)
-#define DUAL_FUNC_5 LT(1, KC_F13)
-#define DUAL_FUNC_6 LT(9, KC_F17)
-#define DUAL_FUNC_7 LT(6, KC_F18)
-#define DUAL_FUNC_8 LT(8, KC_7)
-#define DUAL_FUNC_9 LT(13, KC_P)
-#define DUAL_FUNC_10 LT(11, KC_F22)
-#define DUAL_FUNC_11 LT(6, KC_5)
-#define DUAL_FUNC_12 LT(10, KC_F22)
-#define DUAL_FUNC_13 LT(3, KC_2)
-#define DUAL_FUNC_14 LT(7, KC_O)
-#define DUAL_FUNC_15 LT(14, KC_F24)
-#define DUAL_FUNC_16 LT(9, KC_W)
-#define DUAL_FUNC_17 LT(1, KC_R)
-#define DUAL_FUNC_18 LT(8, KC_W)
+#define DUAL_FUNC_0 LT(9, KC_G)
+#define DUAL_FUNC_1 LT(15, KC_2)
+#define DUAL_FUNC_2 LT(1, KC_P)
+#define DUAL_FUNC_3 LT(9, KC_F7)
+#define DUAL_FUNC_4 LT(6, KC_F12)
+#define DUAL_FUNC_5 LT(7, KC_F5)
+#define DUAL_FUNC_6 LT(10, KC_F21)
+#define DUAL_FUNC_7 LT(4, KC_U)
+#define DUAL_FUNC_8 LT(6, KC_X)
+#define DUAL_FUNC_9 LT(8, KC_P)
+#define DUAL_FUNC_10 LT(13, KC_F12)
+#define DUAL_FUNC_11 LT(7, KC_F3)
+#define DUAL_FUNC_12 LT(11, KC_N)
+#define DUAL_FUNC_13 LT(6, KC_T)
+#define DUAL_FUNC_14 LT(9, KC_F2)
+#define DUAL_FUNC_15 LT(3, KC_F2)
+#define DUAL_FUNC_16 LT(9, KC_0)
+#define DUAL_FUNC_17 LT(7, KC_9)
+#define DUAL_FUNC_18 LT(5, KC_Q)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -102,10 +102,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [8] = LAYOUT_voyager(
     KC_ESCAPE,      KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TD(DANCE_5),    
-    KC_TAB,         KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    MT(MOD_LALT, KC_TAB),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_LEFT_SHIFT,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_TRANSPARENT, KC_J,           KC_K,           KC_L,           RALT(KC_O),     KC_TRANSPARENT, 
     KC_LEFT_CTRL,   KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-                                                    KC_SPACE,       KC_LEFT_ALT,                                    KC_ENTER,       KC_BSPC
+                                                    KC_SPACE,       KC_TAB,                                         KC_ENTER,       KC_BSPC
   ),
 };
 
