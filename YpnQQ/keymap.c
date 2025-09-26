@@ -23,32 +23,32 @@ enum tap_dance_codes {
   DANCE_5,
 };
 
-#define DUAL_FUNC_0 LT(9, KC_G)
-#define DUAL_FUNC_1 LT(15, KC_2)
-#define DUAL_FUNC_2 LT(1, KC_P)
-#define DUAL_FUNC_3 LT(9, KC_F7)
-#define DUAL_FUNC_4 LT(6, KC_F12)
-#define DUAL_FUNC_5 LT(7, KC_F5)
-#define DUAL_FUNC_6 LT(10, KC_F21)
-#define DUAL_FUNC_7 LT(4, KC_U)
-#define DUAL_FUNC_8 LT(6, KC_X)
-#define DUAL_FUNC_9 LT(8, KC_P)
-#define DUAL_FUNC_10 LT(13, KC_F12)
-#define DUAL_FUNC_11 LT(7, KC_F3)
-#define DUAL_FUNC_12 LT(11, KC_N)
-#define DUAL_FUNC_13 LT(6, KC_T)
-#define DUAL_FUNC_14 LT(9, KC_F2)
-#define DUAL_FUNC_15 LT(3, KC_F2)
-#define DUAL_FUNC_16 LT(9, KC_0)
-#define DUAL_FUNC_17 LT(7, KC_9)
-#define DUAL_FUNC_18 LT(5, KC_Q)
+#define DUAL_FUNC_0 LT(7, KC_F17)
+#define DUAL_FUNC_1 LT(13, KC_L)
+#define DUAL_FUNC_2 LT(13, KC_N)
+#define DUAL_FUNC_3 LT(8, KC_F22)
+#define DUAL_FUNC_4 LT(13, KC_3)
+#define DUAL_FUNC_5 LT(7, KC_F6)
+#define DUAL_FUNC_6 LT(12, KC_7)
+#define DUAL_FUNC_7 LT(15, KC_F14)
+#define DUAL_FUNC_8 LT(11, KC_F17)
+#define DUAL_FUNC_9 LT(8, KC_J)
+#define DUAL_FUNC_10 LT(13, KC_F23)
+#define DUAL_FUNC_11 LT(13, KC_F22)
+#define DUAL_FUNC_12 LT(2, KC_3)
+#define DUAL_FUNC_13 LT(14, KC_X)
+#define DUAL_FUNC_14 LT(7, KC_K)
+#define DUAL_FUNC_15 LT(1, KC_6)
+#define DUAL_FUNC_16 LT(6, KC_4)
+#define DUAL_FUNC_17 LT(14, KC_W)
+#define DUAL_FUNC_18 LT(13, KC_B)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     TD(DANCE_0),    KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_EQUAL,       
     KC_ESCAPE,      KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           RALT(KC_W),     
     KC_TAB,         MT(MOD_LSFT, KC_A),MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LGUI, KC_F),KC_G,                                           KC_H,           MT(MOD_RGUI, KC_J),MT(MOD_RALT, KC_K),MT(MOD_RCTL, KC_L),DUAL_FUNC_5,    RALT(KC_A),     
-    KC_MINUS,       DUAL_FUNC_0,    DUAL_FUNC_1,    DUAL_FUNC_2,    DUAL_FUNC_3,    DUAL_FUNC_4,                                    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUES,        KC_QUOTE,       
+    MT(MOD_LSFT, KC_MINUS),DUAL_FUNC_0,    DUAL_FUNC_1,    DUAL_FUNC_2,    DUAL_FUNC_3,    DUAL_FUNC_4,                                    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUES,        MT(MOD_RSFT, KC_QUOTE),
                                                     TD(DANCE_1),    LT(1, KC_SPACE),                                LT(1, KC_ENTER),LT(2, KC_BSPC)
   ),
   [1] = LAYOUT_voyager(
