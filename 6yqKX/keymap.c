@@ -585,3 +585,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
+
+// Overrides
+
+// Shift + , → ;
+const key_override_t shift_comm_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);
+// Shift + . → :
+const key_override_t shift_dot_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);
+// shift + ? → !
+const key_override_t shift_ques_override = ko_make_basic(MOD_MASK_SHIFT, KC_EXLM, KC_QUES);
+// Shift + / → back slash
+const key_override_t shift_slsh_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
+// Shift + / → |
+const key_override_t alt_slash_override = ko_make_basic(MOD_MASK_ALT, KC_SLSH, KC_PIPE);
+
+const key_override_t *const key_overrides[] = {
+    &shift_comm_override,
+    &shift_dot_override,
+    &shift_ques_override,
+    &shift_slsh_override,
+    &alt_slash_override,
+    NULL
+};
