@@ -25,13 +25,12 @@ enum tap_dance_codes {
   DANCE_10,
 };
 
-#define DUAL_FUNC_0 LT(7, KC_K)
-#define DUAL_FUNC_1 LT(11, KC_F14)
-#define DUAL_FUNC_2 LT(10, KC_Z)
-#define DUAL_FUNC_3 LT(4, KC_9)
-#define DUAL_FUNC_4 LT(13, KC_F8)
-#define DUAL_FUNC_5 LT(6, KC_Y)
-#define DUAL_FUNC_6 LT(7, KC_F3)
+#define DUAL_FUNC_0 LT(11, KC_I)
+#define DUAL_FUNC_1 LT(7, KC_K)
+#define DUAL_FUNC_2 LT(7, KC_A)
+#define DUAL_FUNC_3 LT(3, KC_F13)
+#define DUAL_FUNC_4 LT(12, KC_F15)
+#define DUAL_FUNC_5 LT(7, KC_F6)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -43,9 +42,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_voyager(
     KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,                                          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         
-    RALT(KC_QUOTE), KC_GRAVE,       KC_LABK,        KC_RABK,        KC_MINUS,       KC_PIPE,                                        KC_CIRC,        KC_LCBR,        KC_RCBR,        KC_DLR,         KC_DOT,         KC_NO,          
+    RALT(KC_QUOTE), KC_GRAVE,       KC_LABK,        KC_RABK,        KC_MINUS,       KC_PIPE,                                        KC_CIRC,        KC_LCBR,        KC_RCBR,        KC_COLN,        KC_DLR,         KC_NO,          
     KC_LEFT_SHIFT,  KC_EXLM,        KC_ASTR,        KC_SLASH,       KC_EQUAL,       KC_AMPR,                                        KC_HASH,        KC_LPRN,        KC_RPRN,        KC_SCLN,        KC_DQUO,        KC_RIGHT_SHIFT, 
-    KC_LEFT_CTRL,   DUAL_FUNC_4,    DUAL_FUNC_5,    KC_BSLS,        KC_UNDS,        KC_PERC,                                        KC_AT,          KC_LBRC,        KC_RBRC,        DUAL_FUNC_6,    MT(MOD_RALT, KC_QUOTE),KC_RIGHT_CTRL,  
+    KC_LEFT_CTRL,   DUAL_FUNC_4,    DUAL_FUNC_5,    KC_BSLS,        KC_UNDS,        KC_PERC,                                        KC_AT,          KC_LBRC,        KC_RBRC,        MT(MOD_RGUI, KC_DOT),MT(MOD_RALT, KC_QUOTE),KC_RIGHT_CTRL,  
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
@@ -575,21 +574,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(KC_LEFT_GUI);
         } else {
           unregister_code16(KC_LEFT_GUI);
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_6:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(KC_COLN);
-        } else {
-          unregister_code16(KC_COLN);
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(KC_RIGHT_GUI);
-        } else {
-          unregister_code16(KC_RIGHT_GUI);
         }  
       }  
       return false;
