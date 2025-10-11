@@ -23,12 +23,12 @@ enum tap_dance_codes {
   DANCE_8,
 };
 
-#define DUAL_FUNC_0 LT(5, KC_S)
-#define DUAL_FUNC_1 LT(10, KC_F7)
-#define DUAL_FUNC_2 LT(8, KC_F19)
-#define DUAL_FUNC_3 LT(8, KC_A)
-#define DUAL_FUNC_4 LT(4, KC_0)
-#define DUAL_FUNC_5 LT(13, KC_1)
+#define DUAL_FUNC_0 LT(7, KC_C)
+#define DUAL_FUNC_1 LT(2, KC_C)
+#define DUAL_FUNC_2 LT(9, KC_F11)
+#define DUAL_FUNC_3 LT(15, KC_Y)
+#define DUAL_FUNC_4 LT(10, KC_8)
+#define DUAL_FUNC_5 LT(8, KC_F3)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -412,9 +412,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_0:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(RALT(KC_P));
+          register_code16(RALT(KC_O));
         } else {
-          unregister_code16(RALT(KC_P));
+          unregister_code16(RALT(KC_O));
         }
       } else {
         if (record->event.pressed) {
