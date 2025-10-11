@@ -23,12 +23,12 @@ enum tap_dance_codes {
   DANCE_8,
 };
 
-#define DUAL_FUNC_0 LT(7, KC_C)
-#define DUAL_FUNC_1 LT(2, KC_C)
-#define DUAL_FUNC_2 LT(9, KC_F11)
-#define DUAL_FUNC_3 LT(15, KC_Y)
-#define DUAL_FUNC_4 LT(10, KC_8)
-#define DUAL_FUNC_5 LT(8, KC_F3)
+#define DUAL_FUNC_0 LT(6, KC_F15)
+#define DUAL_FUNC_1 LT(10, KC_R)
+#define DUAL_FUNC_2 LT(8, KC_F6)
+#define DUAL_FUNC_3 LT(6, KC_F24)
+#define DUAL_FUNC_4 LT(2, KC_G)
+#define DUAL_FUNC_5 LT(1, KC_0)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -52,9 +52,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          LGUI(KC_LBRC),  KC_NO,          LGUI(KC_RBRC),  KC_NO,          KC_NO,          
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
+  [3] = LAYOUT_voyager(
+    KC_0,           KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,                                           KC_5,           KC_6,           KC_7,           KC_8,           KC_9,           TO(0),          
+    KC_T,           KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_G,           KC_LEFT_SHIFT,  KC_A,           KC_S,           KC_D,           KC_F,                                           KC_TRANSPARENT, KC_J,           KC_K,           KC_L,           KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_B,           KC_LEFT_ALT,    KC_Z,           KC_X,           KC_C,           KC_V,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_DOT,         KC_QUES,        KC_DQUO,        
+                                                    KC_SPACE,       KC_LEFT_CTRL,                                   KC_TRANSPARENT, KC_TRANSPARENT
+  ),
 };
 
 
+const uint16_t PROGMEM combo0[] = { KC_G, KC_H, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(combo0, TO(3)),
+};
 
 
 
