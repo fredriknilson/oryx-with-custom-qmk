@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
+#include "i18n.h"
 #define MOON_LED_LEVEL LED_LEVEL
 #ifndef ZSA_SAFE_RANGE
 #define ZSA_SAFE_RANGE SAFE_RANGE
@@ -29,19 +30,19 @@ enum tap_dance_codes {
   DANCE_14,
 };
 
-#define DUAL_FUNC_0 LT(1, KC_C)
-#define DUAL_FUNC_1 LT(6, KC_F4)
-#define DUAL_FUNC_2 LT(10, KC_F14)
-#define DUAL_FUNC_3 LT(1, KC_Z)
-#define DUAL_FUNC_4 LT(15, KC_6)
-#define DUAL_FUNC_5 LT(15, KC_J)
-#define DUAL_FUNC_6 LT(12, KC_S)
-#define DUAL_FUNC_7 LT(14, KC_9)
-#define DUAL_FUNC_8 LT(13, KC_D)
-#define DUAL_FUNC_9 LT(10, KC_F2)
-#define DUAL_FUNC_10 LT(6, KC_F9)
-#define DUAL_FUNC_11 LT(5, KC_E)
-#define DUAL_FUNC_12 LT(13, KC_F7)
+#define DUAL_FUNC_0 LT(1, KC_F9)
+#define DUAL_FUNC_1 LT(5, KC_D)
+#define DUAL_FUNC_2 LT(2, KC_B)
+#define DUAL_FUNC_3 LT(6, KC_K)
+#define DUAL_FUNC_4 LT(4, KC_K)
+#define DUAL_FUNC_5 LT(11, KC_F4)
+#define DUAL_FUNC_6 LT(4, KC_T)
+#define DUAL_FUNC_7 LT(6, KC_F13)
+#define DUAL_FUNC_8 LT(7, KC_F8)
+#define DUAL_FUNC_9 LT(3, KC_F5)
+#define DUAL_FUNC_10 LT(14, KC_J)
+#define DUAL_FUNC_11 LT(3, KC_F21)
+#define DUAL_FUNC_12 LT(4, KC_I)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -92,6 +93,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LEFT_ALT,    KC_LEFT_ALT,    KC_A,           KC_W,           KC_D,           KC_F,                                           KC_TRANSPARENT, KC_J,           KC_K,           KC_L,           KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_LEFT_SHIFT,  KC_LEFT_SHIFT,  KC_Z,           KC_S,           KC_C,           KC_V,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_DOT,         KC_QUES,        KC_DQUO,        
                                                     KC_SPACE,       KC_LEFT_CTRL,                                   KC_ENTER,       KC_BSPC
+  ),
+  [7] = LAYOUT_voyager(
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, US_ARNG,        
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, US_ODIA,        US_ADIA,        
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
 
