@@ -193,7 +193,7 @@ const key_override_t shift_comm_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM
 // Shift + . → :
 const key_override_t shift_dot_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);
 // shift + ? → !
-const key_override_t shift_ques_override = ko_make_basic(MOD_MASK_SHIFT, KC_EXLM, KC_QUES);
+const key_override_t shift_ques_override = ko_make_basic(MOD_MASK_SHIFT, KC_QUES, KC_EXLM);
 // Shift + / → back slash
 const key_override_t shift_slsh_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
 // Shift + / → |
@@ -208,5 +208,6 @@ const key_override_t *const key_overrides[] = {
     &shift_ques_override,
     &shift_slsh_override,
     &alt_slash_override,
+    &delete_key_override,
     NULL
 };
