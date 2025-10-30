@@ -11,17 +11,17 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(14, KC_F1)
-#define DUAL_FUNC_1 LT(10, KC_H)
-#define DUAL_FUNC_2 LT(1, KC_H)
-#define DUAL_FUNC_3 LT(5, KC_4)
-#define DUAL_FUNC_4 LT(14, KC_C)
-#define DUAL_FUNC_5 LT(6, KC_F16)
-#define DUAL_FUNC_6 LT(1, KC_8)
-#define DUAL_FUNC_7 LT(12, KC_F13)
-#define DUAL_FUNC_8 LT(6, KC_6)
-#define DUAL_FUNC_9 LT(3, KC_2)
-#define DUAL_FUNC_10 LT(10, KC_F7)
+#define DUAL_FUNC_0 LT(9, KC_Y)
+#define DUAL_FUNC_1 LT(6, KC_F14)
+#define DUAL_FUNC_2 LT(12, KC_J)
+#define DUAL_FUNC_3 LT(14, KC_I)
+#define DUAL_FUNC_4 LT(11, KC_F11)
+#define DUAL_FUNC_5 LT(12, KC_Y)
+#define DUAL_FUNC_6 LT(5, KC_J)
+#define DUAL_FUNC_7 LT(2, KC_6)
+#define DUAL_FUNC_8 LT(3, KC_5)
+#define DUAL_FUNC_9 LT(2, KC_I)
+#define DUAL_FUNC_10 LT(11, KC_U)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RALT(KC_QUOTE), KC_GRAVE,       KC_LABK,        KC_RABK,        KC_MINUS,       KC_PIPE,                                        KC_CIRC,        KC_LCBR,        KC_RCBR,        KC_COLN,        KC_DLR,         KC_NO,          
     KC_LEFT_SHIFT,  DUAL_FUNC_4,    DUAL_FUNC_5,    MT(MOD_LALT, KC_SLASH),MT(MOD_LGUI, KC_EQUAL),KC_AMPR,                                        KC_HASH,        DUAL_FUNC_8,    DUAL_FUNC_9,    MT(MOD_RCTL, KC_SCLN),DUAL_FUNC_10,   KC_RIGHT_SHIFT, 
     KC_LEFT_CTRL,   DUAL_FUNC_6,    DUAL_FUNC_7,    KC_BSLS,        KC_UNDS,        KC_PERC,                                        KC_AT,          KC_LBRC,        KC_RBRC,        MT(MOD_RGUI, KC_DOT),MT(MOD_RALT, KC_QUOTE),KC_RIGHT_CTRL,  
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_0
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
