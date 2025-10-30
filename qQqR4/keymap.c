@@ -11,14 +11,14 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(14, KC_M)
-#define DUAL_FUNC_1 LT(2, KC_3)
-#define DUAL_FUNC_2 LT(14, KC_F6)
-#define DUAL_FUNC_3 LT(5, KC_F16)
-#define DUAL_FUNC_4 LT(10, KC_7)
-#define DUAL_FUNC_5 LT(2, KC_A)
-#define DUAL_FUNC_6 LT(13, KC_F13)
-#define DUAL_FUNC_7 LT(15, KC_6)
+#define DUAL_FUNC_0 LT(13, KC_F22)
+#define DUAL_FUNC_1 LT(1, KC_D)
+#define DUAL_FUNC_2 LT(14, KC_F8)
+#define DUAL_FUNC_3 LT(6, KC_C)
+#define DUAL_FUNC_4 LT(2, KC_F2)
+#define DUAL_FUNC_5 LT(5, KC_F6)
+#define DUAL_FUNC_6 LT(8, KC_A)
+#define DUAL_FUNC_7 LT(5, KC_F21)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -31,8 +31,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_voyager(
     KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,                                          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         
     RALT(KC_QUOTE), KC_GRAVE,       KC_LABK,        KC_RABK,        KC_MINUS,       KC_PIPE,                                        KC_CIRC,        KC_LCBR,        KC_RCBR,        KC_COLN,        KC_DLR,         KC_NO,          
-    KC_LEFT_SHIFT,  DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LALT, KC_SLASH),MT(MOD_LGUI, KC_EQUAL),KC_AMPR,                                        KC_HASH,        DUAL_FUNC_5,    DUAL_FUNC_6,    MT(MOD_RCTL, KC_SCLN),DUAL_FUNC_7,    KC_RIGHT_SHIFT, 
-    KC_LEFT_CTRL,   DUAL_FUNC_3,    DUAL_FUNC_4,    KC_BSLS,        KC_UNDS,        KC_PERC,                                        KC_AT,          KC_LBRC,        KC_RBRC,        KC_DOT,         KC_QUOTE,       KC_RIGHT_CTRL,  
+    KC_LEFT_SHIFT,  DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LALT, KC_SLASH),MT(MOD_LGUI, KC_EQUAL),KC_AMPR,                                        KC_HASH,        DUAL_FUNC_5,    DUAL_FUNC_6,    MT(MOD_RCTL, KC_SCLN),DUAL_FUNC_7,    KC_NO,          
+    KC_LEFT_CTRL,   DUAL_FUNC_3,    DUAL_FUNC_4,    KC_BSLS,        KC_UNDS,        KC_PERC,                                        KC_AT,          KC_LBRC,        KC_RBRC,        KC_DOT,         KC_QUOTE,       KC_NO,          
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
