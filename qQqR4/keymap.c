@@ -24,22 +24,22 @@ enum tap_dance_codes {
   DANCE_9,
 };
 
-#define DUAL_FUNC_0 LT(1, KC_S)
-#define DUAL_FUNC_1 LT(11, KC_8)
-#define DUAL_FUNC_2 LT(1, KC_F15)
-#define DUAL_FUNC_3 LT(1, KC_F21)
-#define DUAL_FUNC_4 LT(8, KC_E)
-#define DUAL_FUNC_5 LT(3, KC_F10)
-#define DUAL_FUNC_6 LT(9, KC_0)
-#define DUAL_FUNC_7 LT(3, KC_0)
-#define DUAL_FUNC_8 LT(14, KC_Z)
+#define DUAL_FUNC_0 LT(11, KC_F1)
+#define DUAL_FUNC_1 LT(8, KC_U)
+#define DUAL_FUNC_2 LT(11, KC_9)
+#define DUAL_FUNC_3 LT(15, KC_R)
+#define DUAL_FUNC_4 LT(5, KC_E)
+#define DUAL_FUNC_5 LT(5, KC_2)
+#define DUAL_FUNC_6 LT(14, KC_F19)
+#define DUAL_FUNC_7 LT(10, KC_D)
+#define DUAL_FUNC_8 LT(4, KC_J)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_ESCAPE,      TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),    TD(DANCE_3),    KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           TD(DANCE_8),    TD(DANCE_9),    
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           RALT(KC_W),     
-    MT(MOD_LSFT, KC_GRAVE),MT(MOD_LSFT, KC_A),MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LGUI, KC_F),KC_G,                                           KC_H,           MT(MOD_RGUI, KC_J),MT(MOD_RALT, KC_K),MT(MOD_RCTL, KC_L),DUAL_FUNC_0,    DUAL_FUNC_1,    
-    KC_LEFT_CTRL,   TD(DANCE_4),    TD(DANCE_5),    TD(DANCE_6),    TD(DANCE_7),    KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUES,        MT(MOD_RALT, KC_QUOTE),
+    KC_LEFT_SHIFT,  MT(MOD_LSFT, KC_A),MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LGUI, KC_F),KC_G,                                           KC_H,           MT(MOD_RGUI, KC_J),MT(MOD_RALT, KC_K),MT(MOD_RCTL, KC_L),DUAL_FUNC_0,    DUAL_FUNC_1,    
+    MT(MOD_LCTL, KC_GRAVE),TD(DANCE_4),    TD(DANCE_5),    TD(DANCE_6),    TD(DANCE_7),    KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUES,        MT(MOD_RALT, KC_QUOTE),
                                                     LT(2, KC_TAB),  LT(1, KC_SPACE),                                LT(1, KC_ENTER),LT(2, KC_BSPC)
   ),
   [1] = LAYOUT_voyager(
