@@ -34,15 +34,15 @@ enum tap_dance_codes {
   DANCE_19,
 };
 
-#define DUAL_FUNC_0 LT(11, KC_B)
-#define DUAL_FUNC_1 LT(4, KC_F3)
-#define DUAL_FUNC_2 LT(13, KC_R)
-#define DUAL_FUNC_3 LT(10, KC_F11)
-#define DUAL_FUNC_4 LT(8, KC_S)
-#define DUAL_FUNC_5 LT(13, KC_Q)
-#define DUAL_FUNC_6 LT(5, KC_6)
-#define DUAL_FUNC_7 LT(3, KC_F22)
-#define DUAL_FUNC_8 LT(4, KC_H)
+#define DUAL_FUNC_0 LT(10, KC_F1)
+#define DUAL_FUNC_1 LT(5, KC_I)
+#define DUAL_FUNC_2 LT(10, KC_L)
+#define DUAL_FUNC_3 LT(13, KC_F16)
+#define DUAL_FUNC_4 LT(10, KC_F24)
+#define DUAL_FUNC_5 LT(7, KC_A)
+#define DUAL_FUNC_6 LT(8, KC_F2)
+#define DUAL_FUNC_7 LT(11, KC_A)
+#define DUAL_FUNC_8 LT(9, KC_D)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,           TD(DANCE_4),    KC_E,           KC_R,           TD(DANCE_5),                                    KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           RALT(KC_W),     
     KC_LEFT_SHIFT,  MT(MOD_LSFT, KC_A),MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LGUI, KC_F),KC_G,                                           KC_H,           MT(MOD_RGUI, KC_J),MT(MOD_RALT, KC_K),MT(MOD_RCTL, KC_L),DUAL_FUNC_0,    DUAL_FUNC_1,    
     MT(MOD_LCTL, KC_GRAVE),MT(MOD_LALT, KC_Z),TD(DANCE_6),    TD(DANCE_7),    TD(DANCE_8),    KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUES,        MT(MOD_RALT, KC_QUOTE),
-                                                    LT(4, KC_TAB),  LT(3, KC_SPACE),                                LT(3, KC_ENTER),LT(4, KC_BSPC)
+                                                    LT(6, KC_TAB),  LT(5, KC_SPACE),                                LT(5, KC_ENTER),LT(6, KC_BSPC)
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_1,           KC_2,           KC_3,           KC_4,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TD(DANCE_13),   TD(DANCE_14),   
@@ -64,35 +64,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_J,           KC_TRANSPARENT, TD(DANCE_15),                                   KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_T,           MT(MOD_RGUI, KC_N),MT(MOD_RALT, KC_E),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, TD(DANCE_16),   TD(DANCE_17),   TD(DANCE_18),   TD(DANCE_19),   KC_TRANSPARENT,                                 KC_K,           KC_H,           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-                                                    LT(4, KC_TAB),  LT(3, KC_SPACE),                                LT(3, KC_ENTER),LT(4, KC_BSPC)
+                                                    LT(6, KC_TAB),  LT(5, KC_SPACE),                                LT(5, KC_ENTER),LT(6, KC_BSPC)
   ),
   [3] = LAYOUT_voyager(
+    KC_ESCAPE,      KC_0,           KC_1,           KC_2,           KC_3,           KC_4,                                           KC_5,           KC_6,           KC_7,           KC_8,           KC_9,           TO(1),          
+    KC_G,           KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_LEFT_ALT,    KC_LEFT_ALT,    KC_A,           KC_S,           KC_D,           KC_F,                                           KC_TRANSPARENT, MT(MOD_RCTL, KC_J),KC_TRANSPARENT, MT(MOD_RGUI, KC_L),KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_LEFT_SHIFT,  KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+                                                    KC_SPACE,       KC_LEFT_CTRL,                                   LT(5, KC_ENTER),LT(6, KC_BSPC)
+  ),
+  [4] = LAYOUT_voyager(
+    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TO(1),          
+    KC_TAB,         KC_TRANSPARENT, KC_W,           KC_TRANSPARENT, KC_TRANSPARENT, KC_T,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_LEFT_ALT,    KC_A,           KC_S,           KC_D,           KC_F,           KC_TRANSPARENT,                                 KC_TRANSPARENT, MT(MOD_RCTL, KC_J),KC_TRANSPARENT, MT(MOD_RGUI, KC_L),KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+                                                    KC_SPACE,       KC_LEFT_CTRL,                                   LT(5, KC_ENTER),LT(6, KC_BSPC)
+  ),
+  [5] = LAYOUT_voyager(
     KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,                                          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         
     CW_TOGG,        KC_GRAVE,       KC_LABK,        KC_RABK,        KC_MINUS,       KC_PIPE,                                        KC_DLR,         KC_LCBR,        KC_RCBR,        KC_COLN,        KC_CIRC,        RALT(KC_5),     
     KC_LEFT_SHIFT,  DUAL_FUNC_2,    DUAL_FUNC_3,    MT(MOD_LALT, KC_SLASH),MT(MOD_LGUI, KC_EQUAL),KC_AMPR,                                        KC_HASH,        DUAL_FUNC_6,    DUAL_FUNC_7,    MT(MOD_RCTL, KC_SCLN),DUAL_FUNC_8,    KC_RIGHT_SHIFT, 
     KC_LEFT_CTRL,   DUAL_FUNC_4,    DUAL_FUNC_5,    KC_BSLS,        KC_UNDS,        KC_PERC,                                        KC_AT,          KC_LBRC,        KC_RBRC,        RALT(KC_QUOTE), KC_QUOTE,       KC_RIGHT_ALT,   
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
-  [4] = LAYOUT_voyager(
+  [6] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,                                KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_NO,          KC_NO,          
     KC_LEFT_SHIFT,  KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,                                          KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_NO,          KC_RIGHT_SHIFT, 
     KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          LGUI(KC_LBRC),  KC_NO,          LGUI(KC_RBRC),  KC_NO,          KC_RIGHT_ALT,   
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_INSERT,      KC_DELETE
-  ),
-  [5] = LAYOUT_voyager(
-    KC_ESCAPE,      KC_0,           KC_1,           KC_2,           KC_3,           KC_4,                                           KC_5,           KC_6,           KC_7,           KC_8,           KC_9,           TO(1),          
-    KC_G,           KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_LEFT_ALT,    KC_LEFT_ALT,    KC_A,           KC_S,           KC_D,           KC_F,                                           KC_TRANSPARENT, KC_J,           KC_K,           KC_L,           KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_LEFT_SHIFT,  KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-                                                    KC_SPACE,       KC_LEFT_CTRL,                                   KC_ENTER,       KC_BSPC
-  ),
-  [6] = LAYOUT_voyager(
-    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TO(1),          
-    KC_TAB,         KC_TRANSPARENT, KC_W,           KC_TRANSPARENT, KC_TRANSPARENT, KC_T,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_LEFT_ALT,    KC_A,           KC_S,           KC_D,           KC_F,           KC_TRANSPARENT,                                 KC_H,           KC_J,           KC_K,           KC_L,           KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-                                                    KC_SPACE,       KC_LEFT_CTRL,                                   KC_ENTER,       KC_BSPC
   ),
 };
 
@@ -588,7 +588,7 @@ void dance_13_reset(tap_dance_state_t *state, void *user_data);
 void dance_13_finished(tap_dance_state_t *state, void *user_data) {
     dance_state[13].step = dance_step(state);
     switch (dance_state[13].step) {
-        case DOUBLE_HOLD: layer_move(5); break;
+        case DOUBLE_HOLD: layer_move(3); break;
     }
 }
 
@@ -604,7 +604,7 @@ void dance_14_reset(tap_dance_state_t *state, void *user_data);
 void dance_14_finished(tap_dance_state_t *state, void *user_data) {
     dance_state[14].step = dance_step(state);
     switch (dance_state[14].step) {
-        case DOUBLE_HOLD: layer_move(6); break;
+        case DOUBLE_HOLD: layer_move(4); break;
     }
 }
 
