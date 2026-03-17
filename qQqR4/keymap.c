@@ -7,11 +7,7 @@
 
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
-  MAC_MISSION_CONTROL,
   MAC_SPOTLIGHT,
-  MAC_SIRI,
-  MAC_DND,
-  MAC_LOCK,
 };
 
 
@@ -23,9 +19,9 @@ enum tap_dance_codes {
   DANCE_3,
 };
 
-#define DUAL_FUNC_0 LT(5, KC_F4)
-#define DUAL_FUNC_1 LT(10, KC_6)
-#define DUAL_FUNC_2 LT(10, KC_Y)
+#define DUAL_FUNC_0 LT(10, KC_S)
+#define DUAL_FUNC_1 LT(11, KC_F3)
+#define DUAL_FUNC_2 LT(15, KC_F21)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -50,14 +46,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_SPACE,       KC_LEFT_CTRL,                                   LT(3, KC_BSPC), LT(4, KC_ENTER)
   ),
   [3] = LAYOUT_voyager(
-    KC_F12,         KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
-    CW_TOGG,        KC_GRAVE,       KC_LABK,        KC_RABK,        KC_MINUS,       KC_PIPE,                                        KC_DLR,         KC_LCBR,        KC_RCBR,        KC_COLN,        KC_CIRC,        RALT(KC_5),     
-    KC_LEFT_SHIFT,  KC_EXLM,        KC_ASTR,        KC_SLASH,       KC_EQUAL,       KC_AMPR,                                        KC_HASH,        KC_LPRN,        KC_RPRN,        KC_SCLN,        KC_DQUO,        KC_RIGHT_SHIFT, 
-    KC_LEFT_CTRL,   DUAL_FUNC_1,    DUAL_FUNC_2,    KC_BSLS,        KC_UNDS,        KC_PERC,                                        KC_AT,          KC_LBRC,        KC_RBRC,        RALT(KC_QUOTE), KC_QUOTE,       KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,         KC_PERC,                                        KC_CIRC,        KC_AMPR,        KC_ASTR,        KC_LPRN,        KC_RPRN,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_GRAVE,       KC_LABK,        KC_RABK,        KC_MINUS,       KC_PIPE,                                        KC_DLR,         KC_LCBR,        KC_RCBR,        KC_COLN,        KC_CIRC,        RALT(KC_5),     
+    KC_TRANSPARENT, KC_EXLM,        KC_ASTR,        KC_SLASH,       KC_EQUAL,       KC_AMPR,                                        KC_HASH,        KC_LPRN,        KC_RPRN,        KC_SCLN,        KC_DQUO,        KC_RIGHT_SHIFT, 
+    KC_TRANSPARENT, DUAL_FUNC_1,    DUAL_FUNC_2,    KC_BSLS,        KC_UNDS,        KC_PERC,                                        KC_AT,          KC_LBRC,        KC_RBRC,        RALT(KC_QUOTE), KC_QUOTE,       KC_TRANSPARENT, 
                                                     MAC_SPOTLIGHT,  KC_TRANSPARENT,                                 KC_TRANSPARENT, MAC_SPOTLIGHT
   ),
   [4] = LAYOUT_voyager(
-    KC_NO,          KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,MAC_MISSION_CONTROL,MAC_SPOTLIGHT,  MAC_SIRI,                                       MAC_DND,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          MAC_LOCK,       
+    KC_F12,         KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_NO,          KC_NO,          
     MT(MOD_LSFT, KC_AUDIO_VOL_DOWN),KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,                                KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_NO,          KC_RIGHT_SHIFT, 
     KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          LGUI(KC_LBRC),  KC_NO,          LGUI(KC_RBRC),  KC_NO,          KC_TRANSPARENT, 
@@ -264,16 +260,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
     }
     break;
-    case MAC_MISSION_CONTROL:
-      HCS(0x29F);
     case MAC_SPOTLIGHT:
       HCS(0x221);
-    case MAC_SIRI:
-      HCS(0xCF);
-    case MAC_DND:
-      HSS(0x9B);
-    case MAC_LOCK:
-      HCS(0x19E);
 
     case DUAL_FUNC_0:
       if (record->tap.count > 0) {
