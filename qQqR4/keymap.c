@@ -12,8 +12,8 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(8, KC_H)
-#define DUAL_FUNC_1 LT(8, KC_J)
+#define DUAL_FUNC_0 LT(2, KC_K)
+#define DUAL_FUNC_1 LT(14, KC_F6)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_NO,          KC_NO,          
     MT(MOD_LSFT, KC_AUDIO_VOL_DOWN),MT(MOD_LSFT, KC_AUDIO_MUTE),MT(MOD_LCTL, KC_AUDIO_VOL_UP),MT(MOD_LALT, KC_MEDIA_PREV_TRACK),MT(MOD_LGUI, KC_MEDIA_PLAY_PAUSE),KC_MEDIA_NEXT_TRACK,                                KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_NO,          KC_RIGHT_SHIFT, 
     KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          LGUI(KC_LBRC),  KC_NO,          LGUI(KC_RBRC),  KC_NO,          KC_TRANSPARENT, 
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_DELETE
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
 
