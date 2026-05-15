@@ -16,8 +16,8 @@ enum tap_dance_codes {
   DANCE_0,
 };
 
-#define DUAL_FUNC_0 LT(10, KC_M)
-#define DUAL_FUNC_1 LT(6, KC_F11)
+#define DUAL_FUNC_0 LT(9, KC_I)
+#define DUAL_FUNC_1 LT(14, KC_A)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -43,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [3] = LAYOUT_voyager(
     KC_F12,         KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          LGUI(KC_LBRC),  KC_NO,          LGUI(KC_RBRC),  
-    MT(MOD_LSFT, KC_AUDIO_VOL_DOWN),MT(MOD_LSFT, KC_AUDIO_MUTE),MT(MOD_LCTL, KC_AUDIO_VOL_UP),MT(MOD_LALT, KC_MEDIA_PREV_TRACK),MT(MOD_LGUI, KC_MEDIA_PLAY_PAUSE),KC_MEDIA_NEXT_TRACK,                                KC_NO,          KC_NO,          KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         
-    KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_NO,          KC_NO,          
+    MT(MOD_LSFT, KC_AUDIO_VOL_DOWN),MT(MOD_LSFT, KC_AUDIO_MUTE),MT(MOD_LCTL, KC_AUDIO_VOL_UP),MT(MOD_LALT, KC_MEDIA_PREV_TRACK),MT(MOD_LGUI, KC_MEDIA_PLAY_PAUSE),KC_MEDIA_NEXT_TRACK,                                KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_NO,          KC_RIGHT_SHIFT, 
+    KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          LGUI(KC_LBRC),  KC_NO,          LGUI(KC_RBRC),  KC_NO,          KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
