@@ -16,7 +16,9 @@ enum tap_dance_codes {
   DANCE_0,
 };
 
-#define DUAL_FUNC_0 LT(7, KC_Y)
+#define DUAL_FUNC_0 LT(8, KC_E)
+#define DUAL_FUNC_1 LT(14, KC_F21)
+#define DUAL_FUNC_2 LT(7, KC_5)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -35,16 +37,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_voyager(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_GRAVE,       KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,         KC_PERC,                                        KC_SLASH,       KC_LCBR,        KC_RCBR,        KC_COLN,        KC_QUOTE,       RALT(KC_5),     
-    KC_TILD,        KC_CIRC,        KC_AMPR,        KC_ASTR,        KC_MINUS,       KC_EQUAL,                                       KC_PIPE,        KC_LPRN,        KC_RPRN,        KC_SCLN,        KC_DQUO,        KC_NO,          
-    KC_QUOTE,       KC_NO,          KC_NO,          KC_NO,          KC_UNDS,        KC_PLUS,                                        KC_BSLS,        KC_LBRC,        KC_RBRC,        KC_LABK,        KC_RABK,        KC_NO,          
+    KC_NO,          KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,         KC_PERC,                                        KC_SLASH,       KC_LCBR,        KC_RCBR,        KC_COLN,        KC_QUOTE,       RALT(KC_5),     
+    KC_NO,          KC_CIRC,        KC_AMPR,        KC_ASTR,        KC_MINUS,       KC_EQUAL,                                       KC_PIPE,        KC_LPRN,        KC_RPRN,        KC_SCLN,        KC_DQUO,        KC_NO,          
+    KC_NO,          KC_GRAVE,       KC_TILD,        RALT(KC_QUOTE), KC_UNDS,        KC_PLUS,                                        KC_BSLS,        KC_LBRC,        KC_RBRC,        KC_LABK,        KC_RABK,        KC_NO,          
                                                     KC_TRANSPARENT, MAC_SPOTLIGHT,                                  MAC_SPOTLIGHT,  KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
     KC_F12,         KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_NO,          KC_NO,          
     MT(MOD_LSFT, KC_AUDIO_VOL_DOWN),KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,                                KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_NO,          KC_RIGHT_SHIFT, 
-    KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_CTRL,   KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          LGUI(KC_LBRC),  KC_NO,          LGUI(KC_RBRC),  KC_NO,          KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_1,    DUAL_FUNC_2,    LGUI(KC_C),     LGUI(KC_V),     KC_NO,                                          KC_NO,          LGUI(KC_LBRC),  KC_NO,          LGUI(KC_RBRC),  KC_NO,          KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
@@ -158,6 +160,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(KC_RIGHT_SHIFT);
         } else {
           unregister_code16(KC_RIGHT_SHIFT);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_1:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LGUI(KC_Z));
+        } else {
+          unregister_code16(LGUI(KC_Z));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_LEFT_ALT);
+        } else {
+          unregister_code16(KC_LEFT_ALT);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_2:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LGUI(KC_X));
+        } else {
+          unregister_code16(LGUI(KC_X));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_LEFT_CTRL);
+        } else {
+          unregister_code16(KC_LEFT_CTRL);
         }  
       }  
       return false;
